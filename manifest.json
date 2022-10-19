@@ -1,0 +1,30 @@
+{
+    "manifest_version": 3,
+    "name": "Test Extension",
+    "description": "Test Extension",
+    "version": "0.1.0",
+    "action": {
+      "default_popup": "popup.html",
+      "default_icon": "logo.png",
+      "default_title": "Click Me"
+    },
+    "icons": {
+        "128": "logo.png",
+        "64": "logo.png"
+    },
+    "content_scripts": [
+        {
+          "matches": ["https://*.google.com/*"],
+          "css": ["content-styles.css"],
+          "js": ["content-script.js"]
+        }
+    ],
+    "web_accessible_resources": [
+      {
+        "resources": [
+          "js/main.js"
+        ],
+        "matches": ["https://*.google.com/*"]
+      }
+    ]
+  }
